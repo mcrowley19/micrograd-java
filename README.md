@@ -4,7 +4,7 @@
 
 This is a Java remake of Andrej Karpathy's micrograd Autograd engine.
 
-### Installation
+### Installation through Maven
 
 Clone the repo
 
@@ -14,7 +14,7 @@ cd micrograd-java
 mvn clean install
 ```
 
-Build locally using mvn
+Include this in the pom.xml file of your project.
 
 ```xml
 <dependency>
@@ -52,10 +52,10 @@ Value f = e.pow(2);
 Value g = f.div(2.0);
 g = g.add(10.0.div(f));
 
-System.out.printf("%.4f",g.data); // prints 24.7041, the outcome of this forward pass
+System.out.printf("%.4f",g.data); // prints 5.5397, the outcome of this forward pass
 g.backward();
-System.out.printf("%.4f",a.grad); // prints 138.8338, i.e. the numerical value of dg/da
-System.out.printf("%.4f",b.grad); // prints 645.5773, i.e. the numerical value of dg/db
+System.out.printf("%.4f",a.grad); // prints -11.4728, i.e. the numerical value of dg/da
+System.out.printf("%.4f",b.grad); // prints -49.9067, i.e. the numerical value of dg/db
 ```
 
 ### License
